@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h2>Images 1</h2>
+
+    <div class="row">
+        {% include 'home/image1.html.twig' with {'images_1':images_1} %}
+    </div>
+
+    <h2>Images 2</h2>
+
+    <div class="row">
+        {% for image_2 in images_2 %}
+            <div class="col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="images/{{ image_2 }}" />
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2>Random images</h2>
+
+    <div class="row">
+        {% for random_image in random_images %}
+            <div class="col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="images/{{ random_image }}" />
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

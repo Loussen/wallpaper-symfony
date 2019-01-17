@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GalleryController!{% endblock %}
+
+{% block body %}
+    <div class="row">
+        {% for image in images %}
+            <div class="col-sm-6 col-md-4">
+                <a href="{{ path('view') }}" class="thumbnail">
+                    <img src="/images/{{ image }}" alt="..." />
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="navigation text-center">
+        {{ knp_pagination_render(images) }}
+    </div>
+{% endblock %}
